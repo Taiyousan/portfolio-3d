@@ -1,6 +1,7 @@
 // imports dependencies
 import { CameraControls } from "@react-three/drei";
 import { Perf } from "r3f-perf";
+import { EffectComposer, Pixelation } from "@react-three/postprocessing";
 
 // import components
 import Grid from "./Grid";
@@ -10,6 +11,11 @@ export default function Scene() {
     <>
       {/* Performance Monitor */}
       <Perf />
+
+      {/* Post Processing */}
+      <EffectComposer>
+        <Pixelation granularity={2} />
+      </EffectComposer>
 
       {/* CAMERA */}
       <CameraControls />
