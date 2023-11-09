@@ -5,6 +5,7 @@ import { EffectComposer, Pixelation } from "@react-three/postprocessing";
 
 // import components
 import Grid from "./Grid";
+import Screen from "./Screen";
 
 export default function Scene() {
   return (
@@ -18,13 +19,14 @@ export default function Scene() {
       </EffectComposer>
 
       {/* CAMERA */}
-      <CameraControls />
+      <CameraControls makeDefault />
 
       {/* Lights */}
       <ambientLight intensity={0.5} />
 
       {/* Components */}
       <Grid />
+      <Screen />
     </>
   );
 }
