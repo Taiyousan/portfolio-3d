@@ -36,16 +36,20 @@ export default function Box({ id, clickedBox, setClickedBox, ...props }) {
     e.stopPropagation();
   };
 
-  const hoverLeave = (e) => {
+  const backToDefault = () => {
     const clickedObject = thisMesh.current;
+    gsap.to(clickedObject.position, { y: props.position[1], duration: 0.5 });
+    gsap.to(clickedObject.material.color, {
+      r: 1,
+      g: 0.5271151256969157,
+      b: 0.5972017883558645,
+      duration: 0.5,
+    });
+  };
+
+  const hoverLeave = (e) => {
     if (!isClicked) {
-      gsap.to(clickedObject.position, { y: props.position[1], duration: 0.5 });
-      gsap.to(clickedObject.material.color, {
-        r: 1,
-        g: 0.5271151256969157,
-        b: 0.5972017883558645,
-        duration: 0.5,
-      });
+      backToDefault();
     }
     e.stopPropagation();
   };
