@@ -31,6 +31,7 @@ export default function Grid() {
           id={`Box${index}`}
           clickedBox={clickedBox}
           setClickedBox={setClickedBox}
+          isSpecial={(index + 1) % 10 === 0 ? true : false}
         />
       ))}
     </>

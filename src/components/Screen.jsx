@@ -19,7 +19,7 @@ export default function Screen() {
         receiveShadow
         occlude={"blending"}
         transform
-        position={[0, 5, -12]}
+        position={[-50, 5, -12]}
       >
         <iframe
           title="embed"

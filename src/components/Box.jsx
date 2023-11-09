@@ -78,7 +78,10 @@ export default function Box({ id, clickedBox, setClickedBox, ...props }) {
         onClick={clickHandler}
       >
         <boxGeometry attach="geometry" args={[1, 1, 1]} />
-        <meshStandardMaterial attach="material" color={props.color} />
+        <meshStandardMaterial
+          attach="material"
+          color={props.isSpecial ? props.color : "white"}
+        />
         <Outlines color={"white"} />
       </mesh>
     </>
