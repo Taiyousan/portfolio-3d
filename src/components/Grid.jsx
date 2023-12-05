@@ -27,11 +27,10 @@ export default function Grid() {
         <Box
           key={index}
           position={position}
-          color={"pink"}
           id={`Box${index}`}
           clickedBox={clickedBox}
           setClickedBox={setClickedBox}
-          isSpecial={(index + 1) % 10 === 0 ? true : false}
+          isSpecial={index % 10 === 9 ? true : false} // Vérifie si l'index est un multiple de 10
         />
       ))}
     </>

@@ -1,5 +1,5 @@
 // imports dependencies
-import { CameraControls } from "@react-three/drei";
+import { CameraControls, OrbitControls } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import { EffectComposer, Pixelation } from "@react-three/postprocessing";
 
@@ -19,7 +19,7 @@ export default function Scene() {
       </EffectComposer>
 
       {/* CAMERA */}
-      <CameraControls makeDefault />
+      <OrbitControls makeDefault />
 
       {/* Lights */}
       <ambientLight intensity={0.5} />

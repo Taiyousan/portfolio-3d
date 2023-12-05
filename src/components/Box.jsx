@@ -7,6 +7,14 @@ export default function Box({ id, clickedBox, setClickedBox, ...props }) {
   const [isClicked, setIsClicked] = useState(false);
   const thisMesh = useRef();
 
+  const colorPink = { r: 1, g: 0.5271151256969157, b: 0.5972017883558645 };
+  const colorWhite = { r: 1, g: 1, b: 1 };
+  const colorRed = { r: 1, g: 0, b: 0 };
+
+  const defaultColor = props.isSpecial ? colorPink : colorWhite;
+
+  console.log(props.isSpecial);
+
   // Unclick this box if it is not the clicked box
   useEffect(() => {
     if (clickedBox !== id) {
@@ -40,9 +48,9 @@ export default function Box({ id, clickedBox, setClickedBox, ...props }) {
     const clickedObject = thisMesh.current;
     gsap.to(clickedObject.position, { y: props.position[1], duration: 0.5 });
     gsap.to(clickedObject.material.color, {
-      r: 1,
-      g: 0.5271151256969157,
-      b: 0.5972017883558645,
+      r: defaultColor.r,
+      g: defaultColor.g,
+      b: defaultColor.b,
       duration: 0.5,
     });
   };
